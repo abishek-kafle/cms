@@ -24,6 +24,10 @@ Route::prefix('/admin')->group(function(){
     Route::group(['middleware' => 'admin'], function(){
         // Admin Dashboard
         Route::get('/dashboard', [App\Http\Controllers\Admin\AdminLoginController::class, 'adminDashboard'])->name('adminDashboard');
+        // Admin Profile
+        Route::get('/profile', [App\Http\Controllers\Admin\AdminController::class, 'adminProfile'])->name('adminProfile');
+        // Change Password
+        Route::get('/change-password', [\App\Http\Controllers\Admin\AdminController::class, 'changePassword'])->name('changePassword');
     });
 
     // Admin Logout
