@@ -26,6 +26,7 @@ Route::prefix('/admin')->group(function(){
         Route::get('/dashboard', [App\Http\Controllers\Admin\AdminLoginController::class, 'adminDashboard'])->name('adminDashboard');
         // Admin Profile
         Route::get('/profile', [App\Http\Controllers\Admin\AdminController::class, 'adminProfile'])->name('adminProfile');
+        Route::post('/profile/{id}', [App\Http\Controllers\Admin\adminController::class, 'adminProfileUpdate'])->name('adminProfileUpdate');
         // Change Password
         Route::get('/change-password', [\App\Http\Controllers\Admin\AdminController::class, 'changePassword'])->name('changePassword');
     });

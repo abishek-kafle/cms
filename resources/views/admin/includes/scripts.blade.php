@@ -15,3 +15,4 @@
 
 <!-- Custom JS -->
 <script src="{{asset('public/admin/assets/js/app.js')}}"></script>
+@yield('js')
