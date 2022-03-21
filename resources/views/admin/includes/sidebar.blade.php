@@ -11,21 +11,13 @@
                 <li class="{{$active}}">
                     <a href="{{route('adminDashboard')}}"><i class="la la-dashboard"></i> <span> Dashboard</span></a>
                 </li>
-                @if(Session::get('admin_page') == 'profile')
+                @if(Session::get('admin_page') == 'bio')
                     @php $active = "active" @endphp
                 @else
                     @php $active = "" @endphp
                 @endif
                 <li class="{{$active}}">
-                    <a href="{{route('adminProfile')}}"><i class="la la-dashboard"></i> <span> Profile Update</span></a>
-                </li>
-                @if(Session::get('admin_page') == 'change_password')
-                    @php $active = "active" @endphp
-                @else
-                    @php $active = "" @endphp
-                @endif
-                <li>
-                    <a href="{{route('changePassword')}}"><i class="la la-dashboard"></i> <span> Change Password</span></a>
+                    <a href="{{route('bio.index')}}"><i class="la la-dashboard"></i> <span>Bio</span></a>
                 </li>
             </ul>
         </div>

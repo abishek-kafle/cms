@@ -34,6 +34,10 @@ Route::prefix('/admin')->group(function(){
         Route::post('/check-password', [\App\Http\Controllers\Admin\AdminController::class, 'chkUserPassword'])->name('chkUserPassword');
         //Update Admin password
         Route::post('/profile/update_password/{id}', [\App\Http\Controllers\Admin\AdminController::class, 'updatePassword'])->name('updatePassword');
+
+        // Bio
+        Route::get('/bio', [App\Http\Controllers\Admin\BioController::class, 'index'])->name('bio.index');
+        Route::post('/bio/update/{id}', [App\Http\Controllers\Admin\BioController::class, 'update'])->name('bio.update');
     });
 
     // Admin Logout

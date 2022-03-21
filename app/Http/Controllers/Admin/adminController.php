@@ -15,7 +15,6 @@ class adminController extends Controller
 {
     // Admin Dashboard
     public function adminProfile(){
-        Session::put('admin_page', 'profile');
         $admin = Admin::where('email', Auth::guard('admin')->user()->email)->first();
         return view('admin.profile.profile', compact('admin'));
     }
@@ -70,7 +69,6 @@ class adminController extends Controller
     }
 
     public function changePassword(){
-        Session::put('admin_page', 'change_password');
         $admin = Auth::guard('admin')->user();
         return view ('admin.profile.changePassword', compact('admin'));
     }
