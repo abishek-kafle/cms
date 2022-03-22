@@ -38,6 +38,11 @@ Route::prefix('/admin')->group(function(){
         // Bio
         Route::get('/bio', [App\Http\Controllers\Admin\BioController::class, 'index'])->name('bio.index');
         Route::post('/bio/update/{id}', [App\Http\Controllers\Admin\BioController::class, 'update'])->name('bio.update');
+
+        // About
+        Route::get('/about', [App\Http\Controllers\Admin\AboutController::class, 'index'])->name('about.index');
+        Route::post('/about/update/{id}', [App\Http\Controllers\Admin\AboutController::class, 'update'])->name('about.update');
+
     });
 
     // Admin Logout

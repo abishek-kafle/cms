@@ -26,5 +26,9 @@ class DatabaseSeeder extends Seeder
         DB::table('bios')->insert([
             'title' => 'Write your own Bio'
         ]);
+
+        DB::table('abouts')->insert([
+            'description' => 'Write your own Bio'
+        ]);
     }
 }

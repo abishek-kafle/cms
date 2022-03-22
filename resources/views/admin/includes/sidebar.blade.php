@@ -17,7 +17,15 @@
                     @php $active = "" @endphp
                 @endif
                 <li class="{{$active}}">
-                    <a href="{{route('bio.index')}}"><i class="la la-dashboard"></i> <span>Bio</span></a>
+                    <a href="{{route('bio.index')}}"><i class="la la-book"></i> <span>Bio</span></a>
+                </li>
+                @if(Session::get('admin_page') == 'about')
+                    @php $active = "active" @endphp
+                @else
+                    @php $active = "" @endphp
+                @endif
+                <li class="{{$active}}">
+                    <a href="{{route('about.index')}}"><i class="la la-gear"></i> <span>About</span></a>
                 </li>
             </ul>
         </div>
