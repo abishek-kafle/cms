@@ -26,7 +26,7 @@
                         <h5 class="card-title mb-0">Skills Management</h5>
                     </div>
                     <div class="col-md-2">
-                        <button class="btn btn-primary">Add New Skill</button>
+                        <a href="{{route('skill.add')}}" class="btn btn-primary">Add New Skill</a>
                     </div>
                 </div>
             </div>
@@ -35,21 +35,22 @@
                     <table class="table table-stripped mb-0" id="datatable">
                         <thead>
                             <tr>
-                                <th>Name</th>
-                                <th>Position</th>
-                                <th>Office</th>
-                                <th>Age</th>
-                                <th>Salary</th>
+                                <th>ID</th>
+                                <th>Skill</th>
+                                <th>Percentage</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach ($skills as $skill)
                                 <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>$320,800</td>
+                                    <td>{{$skill->id}}</td>
+                                    <td>{{$skill->title}}</td>
+                                    <td>{{$skill->percentage}}</td>
+                                    <td>
+                                        <a href="{{route('skill.edit', $skill->id)}}" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                        <a href="javascript:" rel="{{ $skill->id }}" rel1="skill/delete" class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></a>
+                                    </td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -66,5 +67,25 @@
         $(document).ready(function() {
             $('#datatable').DataTable();
         } );
+    </script>
+    <script>
+        $('body').on('click', '.btn-delete', function (event) {
+            event.preventDefault();
+            var SITEURL = '{{ URL::to('') }}';
+            var id = $(this).attr('rel');
+            var deleteFunction = $(this).attr('rel1');
+            swal({
+                    title: "Are You Sure? ",
+                    text: "You will not be able to recover this record again",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonClass: "btn-danger",
+                    confirmButtonText: "Yes, Delete it!"
+                },
+                function () {
+                    window.location.href =  SITEURL + "/admin/" + deleteFunction + "/" + id;
+                }
+            );
+        });
     </script>
 @endsection

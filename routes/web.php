@@ -45,6 +45,11 @@ Route::prefix('/admin')->group(function(){
 
         // Skills
         Route::get('/skills', [App\Http\Controllers\Admin\SkillController::class, 'index'])->name('skill.index');
+        Route::get('/skill/add', [App\Http\Controllers\Admin\SkillController::class, 'add'])->name('skill.add');
+        Route::post('/skill/add', [App\Http\Controllers\Admin\SkillController::class, 'store'])->name('skill.store');
+        Route::get('/skill/edit/{id}', [App\Http\Controllers\Admin\SkillController::class, 'edit'])->name('skill.edit');
+        Route::post('/skill/update/{id}', [App\Http\Controllers\Admin\SkillController::class, 'update'])->name('skill.update');
+        Route::get('/skill/delete/{id}', [App\Http\Controllers\Admin\SkillController::class, 'delete'])->name('skill.delete');
 
     });
 

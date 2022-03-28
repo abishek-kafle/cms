@@ -8,7 +8,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-10">
-                        <h5 class="card-title mb-0">Add Skills</h5>
+                        <h5 class="card-title mb-0">Edit Skill</h5>
                     </div>
                     <div class="col-md-2">
                         <a href="{{route('skill.index')}}" class="btn btn-primary">View All Skills</a>
@@ -18,19 +18,19 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm">
-                        <form class="needs-validation" method="POST" action="{{route('skill.store')}}" enctype="multipart/form-data">
+                        <form class="needs-validation" method="POST" action="{{route('skill.update', $skill->id)}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-row">
                                 <div class="col-md-6 mb-3">
                                     <label for="title">Title</label>
-                                    <input type="text" class="form-control" id="title" name="title">
+                                    <input type="text" class="form-control" id="title" name="title" value="{{$skill->title}}">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label for="percentage">Percentage</label>
-                                    <input type="text" class="form-control" id="percentage" name="percentage">
+                                    <input type="text" class="form-control" id="percentage" name="percentage" value="{{$skill->percentage}}">
                                 </div>
                             </div>
-                            <button class="btn btn-primary" type="submit">Add Skill</button>
+                            <button class="btn btn-primary" type="submit">Update Skill</button>
                         </form>
                     </div>
                 </div>

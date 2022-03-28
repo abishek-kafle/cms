@@ -33,7 +33,7 @@
                     @php $active = "" @endphp
                 @endif
                 <li class="{{$active}}">
-                    <a href="{{route('skill.index')}}"><i class="la la-gear"></i> <span>Skills</span></a>
+                    <a href="{{route('skill.index')}}"><i class="la la-tasks"></i> <span>Skills</span></a>
                 </li>
             </ul>
         </div>
