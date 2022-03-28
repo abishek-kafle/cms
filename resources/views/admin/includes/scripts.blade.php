@@ -13,6 +13,10 @@
 <script src="{{asset('public/admin/assets/plugins/raphael/raphael.min.js')}}"></script>
 <script src="{{asset('public/admin/assets/js/chart.js')}}"></script>
 
+<!-- Datatable JS -->
+<script src="{{asset('public/admin/assets/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('public/admin/assets/js/dataTables.bootstrap4.min.js')}}"></script>
+
 <!-- Custom JS -->
 <script src="{{asset('public/admin/assets/js/app.js')}}"></script>
 

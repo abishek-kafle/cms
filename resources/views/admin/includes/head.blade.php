@@ -26,6 +26,9 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="{{asset('public/admin/assets/css/style.css')}}">
 
+    <!-- Datatable CSS -->
+	<link rel="stylesheet" href="{{asset('public/admin/assets/css/dataTables.bootstrap4.min.css')}}">
+
     <!-- SweetAlert -->
     <link rel="stylesheet" href="{{asset('public/admin/assets/css/sweetalert.css')}}">
 

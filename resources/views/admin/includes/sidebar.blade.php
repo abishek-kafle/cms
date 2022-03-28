@@ -27,6 +27,14 @@
                 <li class="{{$active}}">
                     <a href="{{route('about.index')}}"><i class="la la-gear"></i> <span>About</span></a>
                 </li>
+                @if(Session::get('admin_page') == 'skills')
+                    @php $active = "active" @endphp
+                @else
+                    @php $active = "" @endphp
+                @endif
+                <li class="{{$active}}">
+                    <a href="{{route('skill.index')}}"><i class="la la-gear"></i> <span>Skills</span></a>
+                </li>
             </ul>
         </div>
     </div>

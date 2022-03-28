@@ -43,6 +43,9 @@ Route::prefix('/admin')->group(function(){
         Route::get('/about', [App\Http\Controllers\Admin\AboutController::class, 'index'])->name('about.index');
         Route::post('/about/update/{id}', [App\Http\Controllers\Admin\AboutController::class, 'update'])->name('about.update');
 
+        // Skills
+        Route::get('/skills', [App\Http\Controllers\Admin\SkillController::class, 'index'])->name('skill.index');
+
     });
 
     // Admin Logout
