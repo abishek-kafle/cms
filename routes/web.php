@@ -51,6 +51,9 @@ Route::prefix('/admin')->group(function(){
         Route::post('/skill/update/{id}', [App\Http\Controllers\Admin\SkillController::class, 'update'])->name('skill.update');
         Route::get('/skill/delete/{id}', [App\Http\Controllers\Admin\SkillController::class, 'delete'])->name('skill.delete');
 
+        // Timeline
+        Route::get('/timeline', [App\Http\Controllers\Admin\TimelineController::class, 'index'])->name('timeline.index');
+        Route::get('/timeline/add', [App\Http\Controllers\Admin\TimelineController::class, 'add'])->name('timeline.add');
     });
 
     // Admin Logout

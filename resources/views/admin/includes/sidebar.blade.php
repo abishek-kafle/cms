@@ -11,6 +11,7 @@
                 <li class="{{$active}}">
                     <a href="{{route('adminDashboard')}}"><i class="la la-dashboard"></i> <span> Dashboard</span></a>
                 </li>
+
                 @if(Session::get('admin_page') == 'bio')
                     @php $active = "active" @endphp
                 @else
@@ -19,14 +20,16 @@
                 <li class="{{$active}}">
                     <a href="{{route('bio.index')}}"><i class="la la-book"></i> <span>Bio</span></a>
                 </li>
+
                 @if(Session::get('admin_page') == 'about')
                     @php $active = "active" @endphp
                 @else
                     @php $active = "" @endphp
                 @endif
                 <li class="{{$active}}">
-                    <a href="{{route('about.index')}}"><i class="la la-gear"></i> <span>About</span></a>
+                    <a href="{{route('about.index')}}"><i class="fa fa-address-card"></i> <span>About</span></a>
                 </li>
+
                 @if(Session::get('admin_page') == 'skills')
                     @php $active = "active" @endphp
                 @else
@@ -35,6 +38,16 @@
                 <li class="{{$active}}">
                     <a href="{{route('skill.index')}}"><i class="la la-tasks"></i> <span>Skills</span></a>
                 </li>
+
+                @if(Session::get('admin_page') == 'timeline')
+                    @php $active = "active" @endphp
+                @else
+                    @php $active = "" @endphp
+                @endif
+                <li class="{{$active}}">
+                    <a href="{{route('timeline.index')}}"><i class="fa fa-trophy"></i> <span>Timeline</span></a>
+                </li>
+
             </ul>
         </div>
     </div>
