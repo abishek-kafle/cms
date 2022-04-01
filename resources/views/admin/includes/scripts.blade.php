@@ -28,5 +28,10 @@
 <!-- Sweetalert -->
 <script src="{{asset('public/admin/assets/js/jquery.sweet-alert.custom.js')}}"></script>
 <script src="{{asset('public/admin/assets/js/sweetalert.min.js')}}"></script>
+<script>
+    $(document).ready(function() {
+        $( '.editor' ).ckeditor();
+    } );
+</script>
 
 @yield('js')

@@ -48,7 +48,7 @@
                                     <td>{{$blog->id}}</td>
                                     <td>{{$blog->title}}</td>
                                     <td>{{$blog->link}}</td>
-                                    <td>{{$blog->image}}</td>
+                                    <td><img src="{{asset('public/uploads/blog/'.$blog->image)}}" alt="" style="width: 150px;"></td>
                                     <td>
                                         <a href="{{route('blog.edit', $blog->id)}}" class="btn btn-info"><i class="fa fa-edit"></i></a>
                                         <a href="javascript:" rel="{{ $blog->id }}" rel1="blog/delete" class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></a>

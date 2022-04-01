@@ -57,13 +57,13 @@ class adminController extends Controller
 
     public function deleteImage($id){
         $image = Admin::findOrFail($id);
-        $image = Admin::where('id', $id)->update(['image' => '']);
         $image_path = 'public/uploads/admin/';
         if(!empty($image->image)){
             if(file_exists($image_path.$image->image)){
                 unlink($image_path.$image->image);
             }
         }
+        $image = Admin::where('id', $id)->update(['image' => '']);
         Session::flash('info_message', 'Image has been Deleted successfully');
         return redirect()->back();
     }

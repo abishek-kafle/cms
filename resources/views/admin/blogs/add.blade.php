@@ -31,7 +31,10 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="link">Image</label>
-                                    <input type="file" class="form-control" id="image" name="image">
+                                    <input type="file" class="form-control" value="" name="image" id="image" accept="image/*" onchange="readURL(this)">
+                                </div>
+                                <div class="col-md-6">
+                                    <img id="one" src="" alt="" style="width: 150px !important;">
                                 </div>
                                 <div class="col-md-12">
                                     <label for="description">Description</label>
@@ -50,9 +53,15 @@
 @endsection
 
 @section('js')
-    <script>
-        $(document).ready(function() {
-            $( '.editor' ).ckeditor();
-        } );
+    <script type="text/javascript">
+        function readURL(input){
+            if(input.files && input.files[0]){
+                var reader = new FileReader();
+                reader.onload = function (e){
+                    $("#one").attr('src', e.target.result).width(150);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
     </script>
 @endsection
