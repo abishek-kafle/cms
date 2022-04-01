@@ -48,6 +48,14 @@
                     <a href="{{route('timeline.index')}}"><i class="fa fa-trophy"></i> <span>Timeline</span></a>
                 </li>
 
+                @if(Session::get('admin_page') == 'blogs')
+                    @php $active = "active" @endphp
+                @else
+                    @php $active = "" @endphp
+                @endif
+                <li class="{{$active}}">
+                    <a href="{{route('blog.index')}}"><i class="fa fa-rss"></i> <span>Blogs</span></a>
+                </li>
             </ul>
         </div>
     </div>

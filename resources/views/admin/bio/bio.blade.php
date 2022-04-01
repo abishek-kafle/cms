@@ -22,7 +22,7 @@
                                 </div>
                                 <div class="col-md-12 mb-3">
                                     <label for="description">Description</label>
-                                    <textarea name="description" class="form-control" id="description" cols="30" rows="10">{{$bio->description}}</textarea>
+                                    <textarea name="description" class="form-control editor" id="description" cols="30" rows="10">{{$bio->description}}</textarea>
                                 </div>
                             </div>
                             <button class="btn btn-primary" type="submit">Update Bio</button>
@@ -33,4 +33,12 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+<script>
+    $(document).ready(function() {
+        $( '.editor' ).ckeditor();
+    } );
+</script>
 @endsection

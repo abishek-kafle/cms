@@ -32,6 +32,8 @@
     <!-- SweetAlert -->
     <link rel="stylesheet" href="{{asset('public/admin/assets/css/sweetalert.css')}}">
 
+    <script src="https://cdn.ckeditor.com/4.18.0/standard/ckeditor.js"></script>
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
         <script src="assets/js/html5shiv.min.js"></script>

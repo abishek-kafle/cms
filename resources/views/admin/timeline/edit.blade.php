@@ -8,29 +8,41 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-10">
-                        <h5 class="card-title mb-0">Edit Skill</h5>
+                        <h5 class="card-title mb-0">Update Timeline</h5>
                     </div>
                     <div class="col-md-2">
-                        <a href="{{route('skill.index')}}" class="btn btn-primary">View All Skills</a>
+                        <a href="{{route('timeline.index')}}" class="btn btn-primary">View Records</a>
                     </div>
                 </div>
             </div>
             <div class="card-body">
                 <div class="row">
                     <div class="col-sm">
-                        <form class="needs-validation" method="POST" action="{{route('skill.update', $skill->id)}}" enctype="multipart/form-data">
+                        <form class="needs-validation" method="POST" action="{{route('timeline.update', $timeline->id)}}" enctype="multipart/form-data">
                             @csrf
                             <div class="form-row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-5 mb-3">
                                     <label for="title">Title</label>
-                                    <input type="text" class="form-control" id="title" name="title" value="{{$skill->title}}">
+                                    <input type="text" class="form-control" id="title" name="title" value="{{$timeline->title}}">
                                 </div>
-                                <div class="col-md-6 mb-3">
-                                    <label for="percentage">Percentage</label>
-                                    <input type="text" class="form-control" id="percentage" name="percentage" value="{{$skill->percentage}}">
+                                <div class="col-md-3 mb-3">
+                                    <label for="date">Date</label>
+                                    <input type="date" class="form-control" id="date" name="date" value="{{$timeline->date}}">
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="organization">Organization</label>
+                                    <input type="text" class="form-control" id="organization" name="organization" value="{{$timeline->company}}">
+                                </div>
+                                <div class="col-md-6">
+
+                                </div>
+                                <div class="col-md-12">
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control editor" name="description" id="description" rows="5">{{$timeline->description}}</textarea>
                                 </div>
                             </div>
-                            <button class="btn btn-primary" type="submit">Update Skill</button>
+                            <br>
+                            <button class="btn btn-primary" type="submit">Update Record</button>
                         </form>
                     </div>
                 </div>
@@ -38,4 +50,12 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('js')
+    <script>
+        $(document).ready(function() {
+            $( '.editor' ).ckeditor();
+        } );
+    </script>
 @endsection

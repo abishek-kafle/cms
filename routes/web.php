@@ -54,6 +54,18 @@ Route::prefix('/admin')->group(function(){
         // Timeline
         Route::get('/timeline', [App\Http\Controllers\Admin\TimelineController::class, 'index'])->name('timeline.index');
         Route::get('/timeline/add', [App\Http\Controllers\Admin\TimelineController::class, 'add'])->name('timeline.add');
+        Route::post('/timeline/add', [App\Http\Controllers\Admin\TimelineController::class, 'store'])->name('timeline.store');
+        Route::get('/timeline/edit/{id}', [App\Http\Controllers\Admin\TimelineController::class, 'edit'])->name('timeline.edit');
+        Route::post('/timeline/update/{id}', [App\Http\Controllers\Admin\TimelineController::class, 'update'])->name('timeline.update');
+        Route::get('/timeline/delete/{id}', [App\Http\Controllers\Admin\TimelineController::class, 'delete'])->name('timeline.delete');
+
+        // Blogs
+        Route::get('/blog', [App\Http\Controllers\Admin\BlogController::class, 'index'])->name('blog.index');
+        Route::get('/blog/add', [App\Http\Controllers\Admin\BlogController::class, 'add'])->name('blog.add');
+        Route::post('/blog/add', [App\Http\Controllers\Admin\BlogController::class, 'store'])->name('blog.store');
+        Route::get('/blog/edit/{id}', [App\Http\Controllers\Admin\BlogController::class, 'edit'])->name('blog.edit');
+        Route::post('/blog/update/{id}', [App\Http\Controllers\Admin\BlogController::class, 'update'])->name('blog.update');
+        Route::get('/blog/delete/{id}', [App\Http\Controllers\Admin\BlogController::class, 'delete'])->name('blog.delete');
     });
 
     // Admin Logout

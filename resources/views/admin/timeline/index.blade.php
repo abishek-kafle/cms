@@ -45,12 +45,12 @@
                         <tbody>
                             @foreach ($timelines as $timeline)
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{{$timeline->id}}</td>
+                                    <td>{{$timeline->date}}</td>
+                                    <td>{{$timeline->title}}</td>
+                                    <td>{{$timeline->company}}</td>
                                     <td>
-                                        <a href="" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                        <a href="{{route('timeline.edit', $timeline->id)}}" class="btn btn-info"><i class="fa fa-edit"></i></a>
                                         <a href="javascript:" rel="{{ $timeline->id }}" rel1="timeline/delete" class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
