@@ -8,10 +8,10 @@
         <div class="page-header">
             <div class="row">
                 <div class="col">
-                    <h3 class="page-title">Timeline Management</h3>
+                    <h3 class="page-title">Projects Management</h3>
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{route('adminDashboard')}}">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Timeline</li>
+                        <li class="breadcrumb-item active">Projects</li>
                     </ul>
                 </div>
             </div>
@@ -23,10 +23,10 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-md-10">
-                        <h5 class="card-title mb-0">Timeline Management</h5>
+                        <h5 class="card-title mb-0">Project Management</h5>
                     </div>
                     <div class="col-md-2">
-                        <a href="{{route('timeline.add')}}" class="btn btn-primary">Add Record</a>
+                        <a href="{{route('project.add')}}" class="btn btn-primary">Add Project</a>
                     </div>
                 </div>
             </div>
@@ -36,22 +36,22 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Date</th>
                                 <th>Title</th>
-                                <th>Company</th>
+                                <th>Image</th>
+                                <th>Github Link</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($timelines as $timeline)
+                            @foreach ($projects as $project)
                                 <tr>
-                                    <td>{{$timeline->id}}</td>
-                                    <td>{{$timeline->date}}</td>
-                                    <td>{{$timeline->title}}</td>
-                                    <td>{{$timeline->company}}</td>
+                                    <td>{{$project->id}}</td>
+                                    <td>{{$project->title}}</td>
+                                    <td><img src="{{asset('public/uploads/project/'.$project->image)}}" alt="" style="width: 150px;"></td>
+                                    <td>{{$project->link}}</td>
                                     <td>
-                                        <a href="{{route('timeline.edit', $timeline->id)}}" class="btn btn-info"><i class="fa fa-edit"></i></a>
-                                        <a href="javascript:" rel="{{ $timeline->id }}" rel1="timeline/delete" class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></a>
+                                        <a href="{{route('project.edit', $project->id)}}" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                        <a href="javascript:" rel="{{ $project->id }}" rel1="project/delete" class="btn btn-danger btn-delete"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             @endforeach

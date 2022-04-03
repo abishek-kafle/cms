@@ -56,6 +56,15 @@
                 <li class="{{$active}}">
                     <a href="{{route('blog.index')}}"><i class="fa fa-rss"></i> <span>Blogs</span></a>
                 </li>
+
+                @if(Session::get('admin_page') == 'project')
+                    @php $active = "active" @endphp
+                @else
+                    @php $active = "" @endphp
+                @endif
+                <li class="{{$active}}">
+                    <a href="{{route('project.index')}}"><i class="fa fa-rss"></i> <span>Projects</span></a>
+                </li>
             </ul>
         </div>
     </div>

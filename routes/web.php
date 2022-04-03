@@ -66,6 +66,14 @@ Route::prefix('/admin')->group(function(){
         Route::get('/blog/edit/{id}', [App\Http\Controllers\Admin\BlogController::class, 'edit'])->name('blog.edit');
         Route::post('/blog/update/{id}', [App\Http\Controllers\Admin\BlogController::class, 'update'])->name('blog.update');
         Route::get('/blog/delete/{id}', [App\Http\Controllers\Admin\BlogController::class, 'delete'])->name('blog.delete');
+
+        // Projects
+        Route::get('/project', [App\Http\Controllers\Admin\ProjectController::class, 'index'])->name('project.index');
+        Route::get('/project/add', [App\Http\Controllers\Admin\ProjectController::class, 'add'])->name('project.add');
+        Route::post('/project/add', [App\Http\Controllers\Admin\ProjectController::class, 'store'])->name('project.store');
+        Route::get('/project/edit/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'edit'])->name('project.edit');
+        Route::post('/project/update/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'update'])->name('project.update');
+        Route::get('/project/delete/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'delete'])->name('project.delete');
     });
 
     // Admin Logout
