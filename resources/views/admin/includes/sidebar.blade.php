@@ -27,7 +27,7 @@
                     @php $active = "" @endphp
                 @endif
                 <li class="{{$active}}">
-                    <a href="{{route('about.index')}}"><i class="fa fa-address-card"></i> <span>About</span></a>
+                    <a href="{{route('about.index')}}"><i class="fa fa-user"></i> <span>About</span></a>
                 </li>
 
                 @if(Session::get('admin_page') == 'skills')
@@ -63,7 +63,16 @@
                     @php $active = "" @endphp
                 @endif
                 <li class="{{$active}}">
-                    <a href="{{route('project.index')}}"><i class="fa fa-rss"></i> <span>Projects</span></a>
+                    <a href="{{route('project.index')}}"><i class="fa fa-file-code-o"></i><span>Projects</span></a>
+                </li>
+
+                @if(Session::get('admin_page') == 'contact')
+                    @php $active = "active" @endphp
+                @else
+                    @php $active = "" @endphp
+                @endif
+                <li class="{{$active}}">
+                    <a href="{{route('contact.index')}}"><i class="fa fa-address-card"></i> <span>Contact</span></a>
                 </li>
             </ul>
         </div>

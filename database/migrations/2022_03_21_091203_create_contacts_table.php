@@ -15,16 +15,16 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('address');
-            $table->string('email');
-            $table->string('education');
-            $table->string('phone');
-            $table->string('languages');
-            $table->string('facebook');
-            $table->string('twitter');
-            $table->string('github');
-            $table->string('linkedin');
-            $table->string('instagram');
+            $table->string('address')->nullable();
+            $table->string('email')->nullable();
+            $table->string('education')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('languages')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('github')->nullable();
+            $table->string('linkedin')->nullable();
+            $table->string('instagram')->nullable();
             $table->timestamps();
         });
     }

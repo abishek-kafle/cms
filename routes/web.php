@@ -74,6 +74,10 @@ Route::prefix('/admin')->group(function(){
         Route::get('/project/edit/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'edit'])->name('project.edit');
         Route::post('/project/update/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'update'])->name('project.update');
         Route::get('/project/delete/{id}', [App\Http\Controllers\Admin\ProjectController::class, 'delete'])->name('project.delete');
+
+        // Contact
+        Route::get('/contact', [App\Http\Controllers\Admin\ContactController::class, 'index'])->name('contact.index');
+        Route::post('/contact/update/{id}', [App\Http\Controllers\Admin\ContactController::class, 'update'])->name('contact.update');
     });
 
     // Admin Logout
